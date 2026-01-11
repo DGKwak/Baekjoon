@@ -1,2 +1,5 @@
-for i in range(4,4):
-    print(i)
+a = [1, 2, 3]
+b = [[0, 0, 0], [0, 0, 0]]
+
+b[0] = a
+print(b)
