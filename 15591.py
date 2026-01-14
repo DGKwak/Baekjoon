@@ -1,6 +1,5 @@
 # https://steadily-worked.tistory.com/877
 # https://cheon2308.tistory.com/entry/%EB%B0%B1%EC%A4%80-15591%EB%B2%88-%ED%8C%8C%EC%9D%B4%EC%8D%AC-MooTubeSilver
-
 import sys
 from collections import deque
 
@@ -15,7 +14,7 @@ for _ in range(N-1):
 def bfs(k, v):
     visited = [0 for _ in range(N+1)]
     visited[v] = 1
-    q = deque([v])
+    q = deque([(v, float('inf'))])
     result = 0
     
     while q:
@@ -28,3 +27,9 @@ def bfs(k, v):
                 visited[next_v] = 1
                 result += 1
                 q.append((next_v, next_USADO))
+    
+    return result
+
+for _ in range(Q):
+    k, v = map(int, sys.stdin.readline().split())
+    print(bfs(k, v))
